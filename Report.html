@@ -14271,6 +14271,14 @@ a.anchor-link {
         <span class="k">for</span> <span class="n">s</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span><span class="p">,</span> <span class="n">done</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 </pre></div>
+<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>The following parameters were used to solve the environment.  In the previous project 2 I had observed that training was especially sensitive to the learning rates and the batch size, and here the same parameters worked fine.  I played a little with the batch size, but do not believe it had a crucial effect with in the range 8-32 that I played around with.  This environment is slightly more challenging than Project 2, so I increased the number of episodes.  Note that once the agents start to acheive good scores, each episode take a really long time to finish because the agents never miss.</p>
+<div class="highlight"><pre><span></span><span class="s2">&quot;actor_learning_rate&quot;</span><span class="p">:</span> <span class="mf">1e-4</span><span class="p">,</span>
+    <span class="s2">&quot;critic_learning_rate&quot;</span><span class="p">:</span> <span class="mf">1e-4</span><span class="p">,</span>
+    <span class="s2">&quot;batch_size&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+    <span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">0.99</span><span class="p">,</span>
+    <span class="s2">&quot;tau&quot;</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span>
+    <span class="s2">&quot;num_episodes&quot;</span><span class="p">:</span> <span class="mi">5000</span>
+</pre></div>
 
 </div>
 </div>
@@ -14283,7 +14291,7 @@ a.anchor-link {
 <li>There are many other algorithms that would be interesting to try, such as a policy based agent.</li>
 <li>I am interested in other more challenging multi-agent environments, that might make use of the strategy outlined in this <a href="https://proceedings.neurips.cc/paper/2017/file/68a9750337a418a86fe06c1991a1d64c-Paper.pdf">paper</a>.
 ## Results
-The successful training of the agents is shown in the plot below.</li>
+The successful training of the agents is shown in the plot below.  4200 episodes were needed to solve the environment.</li>
 </ul>
 
 </div>
@@ -14343,7 +14351,7 @@ The successful training of the agents is shown in the plot below.</li>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">running_average</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14374,13 +14382,13 @@ The successful training of the agents is shown in the plot below.</li>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.legend.Legend at 0x1e6101f2278&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x1e63b787320&gt;</pre>
 </div>
 
 </div>
